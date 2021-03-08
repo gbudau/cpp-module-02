@@ -1,6 +1,9 @@
 en.subject.pdf
 CPPLINT.cfg
 *.swp
+ex00/main.cpp
+ex01/main.cpp
+ex02/main.cpp
 
 # Created by https://www.toptal.com/developers/gitignore/api/c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++
