@@ -6,8 +6,8 @@
 class	Fixed {
 	public:
 							Fixed();
-		explicit			Fixed(const int n);
-		explicit			Fixed(const float n);
+							Fixed(const int n);
+							Fixed(const float n);
 							Fixed(Fixed const & src);
 							~Fixed();
 		int					getRawBits() const;
