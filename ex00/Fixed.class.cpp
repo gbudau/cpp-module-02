@@ -34,4 +34,4 @@ Fixed &		Fixed::operator=(Fixed const & rhs) {
 	return *this;
 }
 
-const int	Fixed::_fractional_bits = 0;
+const int	Fixed::_fractional_bits = 8;
