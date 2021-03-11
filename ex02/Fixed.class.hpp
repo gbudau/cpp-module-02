@@ -5,32 +5,34 @@
 
 class	Fixed {
 	public:
-							Fixed();
-							Fixed(const int n);
-							Fixed(const float n);
-							Fixed(Fixed const & src);
-							~Fixed();
-		int					getRawBits() const;
-		void				setRawBits(int const raw);
-		int					toInt() const;
-		float				toFloat() const;
-		Fixed &				operator=(Fixed const & rhs);
-		bool				operator>(Fixed const & rhs) const;
-		bool				operator<(Fixed const & rhs) const;
-		bool				operator>=(Fixed const & rhs) const;
-		bool				operator<=(Fixed const & rhs) const;
-		bool				operator==(Fixed const & rhs) const;
-		bool				operator!=(Fixed const & rhs) const;
-		Fixed				operator+(Fixed const & rhs) const;
-		Fixed				operator-(Fixed const & rhs) const;
-		Fixed				operator*(Fixed const & rhs) const;
-		Fixed				operator/(Fixed const & rhs) const;
-		Fixed &				operator++();
-		Fixed 				operator++(int);
-		Fixed &				operator--();
-		Fixed 				operator--(int);
-		static Fixed &		min(Fixed & a, Fixed & b);
-		static Fixed &		max(Fixed & a, Fixed & b);
+								Fixed();
+								Fixed(const int n);
+								Fixed(const float n);
+								Fixed(Fixed const & src);
+								~Fixed();
+		int						getRawBits() const;
+		void					setRawBits(int const raw);
+		int						toInt() const;
+		float					toFloat() const;
+		Fixed &					operator=(Fixed const & rhs);
+		bool					operator>(Fixed const & rhs) const;
+		bool					operator<(Fixed const & rhs) const;
+		bool					operator>=(Fixed const & rhs) const;
+		bool					operator<=(Fixed const & rhs) const;
+		bool					operator==(Fixed const & rhs) const;
+		bool					operator!=(Fixed const & rhs) const;
+		Fixed					operator+(Fixed const & rhs) const;
+		Fixed					operator-(Fixed const & rhs) const;
+		Fixed					operator*(Fixed const & rhs) const;
+		Fixed					operator/(Fixed const & rhs) const;
+		Fixed &					operator++();
+		Fixed 					operator++(int);
+		Fixed &					operator--();
+		Fixed 					operator--(int);
+		static Fixed &			min(Fixed & a, Fixed & b);
+		static Fixed const &	min(Fixed const & a, Fixed const & b);
+		static Fixed &			max(Fixed & a, Fixed & b);
+		static Fixed const &	max(Fixed const & a, Fixed const & b);
 
 	private:
 		int					_value;
