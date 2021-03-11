@@ -103,4 +103,28 @@ Fixed		Fixed::operator/(Fixed const & rhs) const {
 	return tmp;
 }
 
+Fixed &		Fixed::operator--() {
+	this->_value--;
+	return *this;
+}
+
+Fixed 		Fixed::operator--(int) {
+	Fixed	tmp = *this;
+
+	this->_value--;
+	return tmp;
+}
+
+Fixed &		Fixed::operator++() {
+	this->_value++;
+	return *this;
+}
+
+Fixed 		Fixed::operator++(int) {
+	Fixed	tmp = *this;
+
+	this->_value++;
+	return tmp;
+}
+
 const int	Fixed::_fractional_bits = 8;

@@ -12,9 +12,9 @@ class	Fixed {
 							~Fixed();
 		int					getRawBits() const;
 		void				setRawBits(int const raw);
-		Fixed &				operator=(Fixed const & rhs);
 		int					toInt() const;
 		float				toFloat() const;
+		Fixed &				operator=(Fixed const & rhs);
 		bool				operator>(Fixed const & rhs);
 		bool				operator<(Fixed const & rhs);
 		bool				operator>=(Fixed const & rhs);
@@ -25,6 +25,11 @@ class	Fixed {
 		Fixed				operator-(Fixed const & rhs) const;
 		Fixed				operator*(Fixed const & rhs) const;
 		Fixed				operator/(Fixed const & rhs) const;
+		Fixed &				operator++();
+		Fixed 				operator++(int);
+		Fixed &				operator--();
+		Fixed 				operator--(int);
+
 	private:
 		int					_value;
 		static const int	_fractional_bits;
