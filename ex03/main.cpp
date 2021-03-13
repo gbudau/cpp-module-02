@@ -23,6 +23,11 @@ static bool		is_sign(int c) {
 	return c == '-' || c == '+';
 }
 
+static bool		is_number(char *str) {
+	return  isdigit(*str) ||
+			(is_sign(*str) && isdigit(*(str + 1)));
+}
+
 static void		error_exit(char c) {
 	if (c) {
 		std::cerr << "Syntax error near: '" << c << '\'' << std::endl;
@@ -75,8 +80,7 @@ static Fixed	parse_number(char **expression) {
 static Fixed	parse_format(char **expression) {
 	char	*n_end = *expression;
 
-	if (isdigit(*n_end) ||
-			(is_sign(*n_end) && isdigit(*(n_end + 1)))) {
+	if (is_number(n_end)) {
 		return parse_number(expression);
 	} else if (**expression == '(') {
 		return evaluate_parenthesis(expression);
@@ -125,8 +129,7 @@ Fixed			parse_sum_subst(char **expression) {
 		}
 		op = **expression;
 	}
-	if (op && op != ')' && (!isdigit(op) ||
-			(!is_sign(op) && !isdigit(*(*expression + 1))))) {
+	if (op && op != ')' && (!is_number(*expression))) {
 		error_exit(**expression);
 	}
 	return total;
