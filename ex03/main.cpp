@@ -89,9 +89,9 @@ static Fixed	parse_format(char **expression) {
 static Fixed	parse_div_mult(char **expression) {
 	*expression = skip_space(*expression);
 	Fixed	total = parse_format(expression);
+	*expression = skip_space(*expression);
 	char	op = **expression;
 
-	*expression = skip_space(*expression);
 	while (op == '*' || op == '/') {
 		*expression = *expression + 1;
 		*expression = skip_space(*expression);
@@ -110,9 +110,9 @@ static Fixed	parse_div_mult(char **expression) {
 Fixed			parse_sum_subst(char **expression) {
 	*expression = skip_space(*expression);
 	Fixed	total = parse_div_mult(expression);
+	*expression = skip_space(*expression);
 	char	op = **expression;
 
-	*expression = skip_space(*expression);
 	while (op == '+' || op == '-') {
 		*expression = *expression + 1;
 		*expression = skip_space(*expression);
